@@ -252,7 +252,7 @@
         <img
           src="https://static.wixstatic.com/media/e7b241_477c9745def344f086854c91ea507715~mv2.jpg/v1/fill/w_220,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/e7b241_477c9745def344f086854c91ea507715~mv2.jpg"
           alt="We Sell Any Home logo"
-          class="h-14 w-auto object-contain"
+          class="h-12 w-auto object-contain"
         />
       </a>
 
@@ -288,7 +288,7 @@
       <img
         src="https://static.wixstatic.com/media/e7b241_7ff64a5c06e4483f950f6946c651d621~mv2.jpg/v1/fill/w_160,h_60,fp_0.50_0.50,lg_1,q_80,enc_avif,quality_auto/e7b241_7ff64a5c06e4483f950f6946c651d621~mv2.jpg"
         alt="Howard Hanna Real Estate Services"
-        class="h-10 w-auto object-contain hidden lg:block"
+        class="h-16 w-auto object-contain hidden lg:block"
       />
 
       <!-- Mobile hamburger -->
@@ -1254,6 +1254,50 @@
 
     /* Init */
     calcPayment();
+  </script>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FLOATING HOUSE MASCOT (scroll-following)
+  ═══════════════════════════════════════════════════════════ -->
+  <div id="houseMascot" style="
+    position: fixed;
+    bottom: 32px;
+    right: 24px;
+    width: 110px;
+    z-index: 999;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    filter: drop-shadow(0 4px 16px rgba(0,0,0,0.35));
+  ">
+    <video
+      src="/assets/videos/house-mascot.mp4"
+      autoplay
+      loop
+      muted
+      playsinline
+      style="width: 100%; border-radius: 12px;"
+    ></video>
+  </div>
+
+  <script>
+    /* Show mascot after user starts scrolling */
+    (function() {
+      var mascot = document.getElementById('houseMascot');
+      var shown = false;
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 200 && !shown) {
+          shown = true;
+          mascot.style.opacity = '1';
+          mascot.style.transform = 'translateY(0)';
+        } else if (window.scrollY <= 200 && shown) {
+          shown = false;
+          mascot.style.opacity = '0';
+          mascot.style.transform = 'translateY(20px)';
+        }
+      }, { passive: true });
+    })();
   </script>
 
 </body>
