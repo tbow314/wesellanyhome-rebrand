@@ -1,0 +1,31 @@
+# robots.txt - Search Engine Crawler Instructions
+# For: We Sell Any Home - Pittsburgh Real Estate
+
+# Allow all crawlers to access the site
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.env
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.vercel/
+
+# Specify sitemap location
+Sitemap: https://wesellanyhome.vercel.app/sitemap.xml
+
+# Crawl delay (optional - default is good for Vercel)
+# Crawl-delay: 1
+
+# Google-specific instructions
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+
+# Bing-specific instructions
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+
+# Respect all crawlers for performance
+# (Vercel CDN handles high traffic well, so no rate limiting needed)
