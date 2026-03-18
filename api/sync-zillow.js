@@ -6,7 +6,8 @@ const { put } = require('@vercel/blob');
 const path = require('path');
 const fs   = require('fs');
 
-const ZILLOW_PROFILE_URL = 'https://www.zillow.com/profile/marioarudolph';
+const ZILLOW_PROFILE_URL = 'https://www.zillow.com/hauljack/agentProfile?screenName=marioarudolph';
+const ZILLOW_FALLBACK_URL = 'https://www.zillow.com/profile/marioarudolph';
 const BLOB_KEY = 'listings-data.json';
 
 module.exports = async function handler(req, res) {
@@ -25,8 +26,17 @@ module.exports = async function handler(req, res) {
   try {
     console.log('Fetching Zillow profile…');
 
-    const html = await fetchWithRetry(ZILLOW_PROFILE_URL);
-    const stats = extractStats(html);
+    // Try internal API first (bypasses Cloudflare), fall back to HTML scrape
+    let stats;
+    try {
+      const json = await fetchJson(ZILLOW_PROFILE_URL);
+      stats = extractStatsFromJson(json);
+      console.log('Got stats from hauljack API');
+    } catch (e) {
+      console.log('hauljack failed, trying HTML scrape:', e.message);
+      const html = await fetchWithRetry(ZILLOW_FALLBACK_URL);
+      stats = extractStats(html);
+    }
 
     console.log('Extracted stats:', stats);
 
@@ -67,6 +77,33 @@ module.exports = async function handler(req, res) {
     return res.status(500).json({ error: err.message });
   }
 };
+
+// ── Fetch hauljack JSON endpoint ──────────────────────────────────────────────
+async function fetchJson(url) {
+  const resp = await fetch(url, {
+    headers: {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+      'Accept': 'application/json, text/plain, */*',
+      'Accept-Language': 'en-US,en;q=0.9',
+      'Referer': 'https://www.zillow.com/',
+    },
+  });
+  if (!resp.ok) throw new Error(`hauljack HTTP ${resp.status}`);
+  return resp.json();
+}
+
+// ── Extract stats from hauljack JSON response ─────────────────────────────────
+function extractStatsFromJson(data) {
+  const agent = data?.agent || data?.agentProfile || data || {};
+  const metrics = agent.agentMetrics || agent.metrics || agent;
+  return {
+    total_sales:          metrics.totalSales        || metrics.totalTransactions || null,
+    sales_last_12_months: metrics.recentSales        || metrics.salesLast12Months  || null,
+    avg_sale_price:       metrics.avgSalePrice       || metrics.averageSalePrice   || null,
+    zillow_rating:        metrics.rating             || agent.reviewScore          || null,
+    review_count:         metrics.reviewCount        || agent.totalReviews         || null,
+  };
+}
 
 // ── Fetch with browser-like headers ──────────────────────────────────────────
 async function fetchWithRetry(url, retries = 2) {

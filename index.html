@@ -204,6 +204,14 @@
               "@type": "Answer",
               "text": "Use our free home valuation tool or contact us directly. Mario Rudolph has sold 171 homes across Allegheny County and Washington County, with sale prices ranging from $41K to over $600K, giving us deep expertise in pricing homes accurately across all Pittsburgh-area neighborhoods and price ranges."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Washington County PA a good place to buy real estate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Washington County is an excellent emerging market for Pittsburgh-area real estate buyers and investors. Located south of Pittsburgh with Allegheny County access, Washington County offers homes from $130,000 to $350,000—significantly more affordable than Allegheny County—with 2.5% annual appreciation. Strong fundamentals include growing population, revitalization in communities like Canonsburg and Washington city, and proximity to Pittsburgh employment."
+            }
           }
         ]
       }
@@ -404,19 +412,19 @@
   <section class="bg-white border-b border-gray-100 py-8" aria-label="Team statistics">
     <div class="max-w-5xl mx-auto px-4 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
       <div>
-        <p id="statSalesCount" class="text-4xl font-extrabold text-navy-900">171</p>
+        <p id="stat-total-sales" class="text-4xl font-extrabold text-navy-900">171</p>
         <p class="text-gray-500 text-sm mt-1">Total Sales</p>
       </div>
       <div>
-        <p id="statSalesLast12" class="text-4xl font-extrabold text-navy-900">20</p>
+        <p id="stat-sales-12mo" class="text-4xl font-extrabold text-navy-900">20</p>
         <p class="text-gray-500 text-sm mt-1">Sales Last 12 Months</p>
       </div>
       <div>
-        <p class="text-4xl font-extrabold text-navy-900">$246K</p>
+        <p id="stat-avg-price" class="text-4xl font-extrabold text-navy-900">$246K</p>
         <p class="text-gray-500 text-sm mt-1">Average Sale Price</p>
       </div>
       <div>
-        <p class="text-4xl font-extrabold text-navy-900">5.0 ★</p>
+        <p id="stat-rating" class="text-4xl font-extrabold text-navy-900">5.0 ★</p>
         <p class="text-gray-500 text-sm mt-1">Zillow Team Rating</p>
       </div>
     </div>
@@ -543,95 +551,49 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
-       FEATURED LISTINGS
+       LIVE LISTINGS (Active + Sold — fed from /data/listings.json)
   ═══════════════════════════════════════════════════════════ -->
   <section id="listings" class="py-16 bg-white" aria-labelledby="listingsHeading">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-10">
-        <h2 id="listingsHeading" class="text-3xl font-extrabold text-navy-900">Featured Greater Pittsburgh Area Listings</h2>
-        <p class="text-gray-500 mt-2 max-w-xl mx-auto">Recent sales across Allegheny County and Washington County — our local expertise gives you the edge in every market.</p>
+      <div class="text-center mb-8">
+        <h2 id="listingsHeading" class="text-3xl font-extrabold text-navy-900">Greater Pittsburgh Area Listings</h2>
+        <p class="text-gray-500 mt-2 max-w-xl mx-auto">Active listings and recent sales across Allegheny County and Washington County.</p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Tab toggles -->
+      <div class="flex justify-center gap-3 mb-8">
+        <button id="tabActive" onclick="showTab('active')"
+          class="px-6 py-2 rounded-full text-sm font-bold bg-green-600 text-white transition-colors">
+          Active Listings
+        </button>
+        <button id="tabSold" onclick="showTab('sold')"
+          class="px-6 py-2 rounded-full text-sm font-bold bg-white border border-gray-300 text-gray-600 hover:border-navy-900 transition-colors">
+          Recent Sales
+        </button>
+      </div>
 
-        <article class="listing-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100">
-          <div class="relative">
-            <img src="https://photos.zillowstatic.com/fp/703bb51cf62ce7c6a6cd528972a21777-p_d.jpg"
-              alt="4 bed 4 bath home in Canonsburg PA — Washington County real estate"
-              class="w-full h-48 object-cover" loading="lazy" />
-            <span class="absolute top-3 left-3 bg-navy-900 text-white text-xs font-bold px-3 py-1 rounded-full">Sold</span>
-          </div>
-          <div class="p-4">
-            <p class="text-xl font-extrabold text-navy-900">$525,000</p>
-            <p class="text-gray-600 text-sm mt-1">4 Bed &nbsp;·&nbsp; 4 Bath &nbsp;·&nbsp; 3,004 sq ft</p>
-            <p class="text-gray-500 text-xs mt-1">Canonsburg, PA · Washington County</p>
-            <a href="https://www.zillow.com/profile/marioarudolph" target="_blank" rel="noopener noreferrer"
-               class="mt-3 block text-center border border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white rounded-lg py-2 text-sm font-semibold transition-colors">
-              View on Zillow
-            </a>
-          </div>
-        </article>
+      <!-- Active listings container -->
+      <div id="activeListingsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Skeleton loader -->
+        <div class="listing-skeleton animate-pulse bg-gray-100 rounded-2xl h-72"></div>
+        <div class="listing-skeleton animate-pulse bg-gray-100 rounded-2xl h-72"></div>
+        <div class="listing-skeleton animate-pulse bg-gray-100 rounded-2xl h-72"></div>
+        <div class="listing-skeleton animate-pulse bg-gray-100 rounded-2xl h-72"></div>
+      </div>
 
-        <article class="listing-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100">
-          <div class="relative">
-            <img src="https://photos.zillowstatic.com/fp/c25ffea56990c039591f66f2827e63dc-p_d.jpg"
-              alt="3 bed 2 bath home in Clairton PA — Allegheny County real estate"
-              class="w-full h-48 object-cover" loading="lazy" />
-            <span class="absolute top-3 left-3 bg-navy-900 text-white text-xs font-bold px-3 py-1 rounded-full">Sold</span>
-          </div>
-          <div class="p-4">
-            <p class="text-xl font-extrabold text-navy-900">$120,000</p>
-            <p class="text-gray-600 text-sm mt-1">3 Bed &nbsp;·&nbsp; 2 Bath</p>
-            <p class="text-gray-500 text-xs mt-1">Clairton, PA · Allegheny County</p>
-            <a href="https://www.zillow.com/profile/marioarudolph" target="_blank" rel="noopener noreferrer"
-               class="mt-3 block text-center border border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white rounded-lg py-2 text-sm font-semibold transition-colors">
-              View on Zillow
-            </a>
-          </div>
-        </article>
+      <!-- Sold listings container (hidden by default) -->
+      <div id="soldListingsGrid" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
 
-        <article class="listing-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100">
-          <div class="relative">
-            <img src="https://photos.zillowstatic.com/fp/4503dc030a45f386a61d04e66cc70ff7-p_d.jpg"
-              alt="3 bed 3 bath home in West Mifflin PA — South Pittsburgh suburb"
-              class="w-full h-48 object-cover" loading="lazy" />
-            <span class="absolute top-3 left-3 bg-navy-900 text-white text-xs font-bold px-3 py-1 rounded-full">Sold</span>
-          </div>
-          <div class="p-4">
-            <p class="text-xl font-extrabold text-navy-900">$295,000</p>
-            <p class="text-gray-600 text-sm mt-1">3 Bed &nbsp;·&nbsp; 3 Bath</p>
-            <p class="text-gray-500 text-xs mt-1">West Mifflin, PA · Allegheny County</p>
-            <a href="https://www.zillow.com/profile/marioarudolph" target="_blank" rel="noopener noreferrer"
-               class="mt-3 block text-center border border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white rounded-lg py-2 text-sm font-semibold transition-colors">
-              View on Zillow
-            </a>
-          </div>
-        </article>
-
-        <article class="listing-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100">
-          <div class="relative">
-            <img src="https://photos.zillowstatic.com/fp/f84ec46538412542652e824bc01d333a-p_d.jpg"
-              alt="2 bed 2 bath home in Clairton PA — affordable Pittsburgh real estate"
-              class="w-full h-48 object-cover" loading="lazy" />
-            <span class="absolute top-3 left-3 bg-navy-900 text-white text-xs font-bold px-3 py-1 rounded-full">Sold</span>
-          </div>
-          <div class="p-4">
-            <p class="text-xl font-extrabold text-navy-900">$179,900</p>
-            <p class="text-gray-600 text-sm mt-1">2 Bed &nbsp;·&nbsp; 2 Bath &nbsp;·&nbsp; 1,072 sq ft</p>
-            <p class="text-gray-500 text-xs mt-1">Clairton, PA · Allegheny County</p>
-            <a href="https://www.zillow.com/profile/marioarudolph" target="_blank" rel="noopener noreferrer"
-               class="mt-3 block text-center border border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white rounded-lg py-2 text-sm font-semibold transition-colors">
-              View on Zillow
-            </a>
-          </div>
-        </article>
-
+      <!-- No active listings fallback -->
+      <div id="noActiveListings" class="hidden text-center py-12">
+        <p class="text-gray-500 text-lg mb-2">No active listings at the moment.</p>
+        <p class="text-gray-400 text-sm">Check back soon or <a href="#contact" class="text-navy-900 font-semibold underline">contact Mario</a> for off-market opportunities.</p>
       </div>
 
       <div class="text-center mt-10">
         <a href="https://www.zillow.com/profile/marioarudolph" target="_blank" rel="noopener noreferrer"
            class="inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white font-bold px-8 py-3 rounded-full transition-colors">
-          See All Listings on Zillow
+          See Full Profile on Zillow
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
       </div>
@@ -639,36 +601,27 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
-       ACTIVE LISTINGS — ZILLOW WIDGET
-       To activate: Mario logs into Zillow Premier Agent →
-       Profile → Widgets → copy embed code → paste inside the
-       div below replacing the placeholder comment.
+       CLIENT REVIEWS (fed from /data/listings.json)
   ═══════════════════════════════════════════════════════════ -->
-  <section id="active-listings" class="py-16 bg-gray-50" aria-labelledby="activeListingsHeading">
+  <section id="reviews" class="py-16 bg-gray-50" aria-labelledby="reviewsHeading">
     <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-10">
-        <p class="text-gold-500 text-xs font-bold uppercase tracking-widest mb-2">Always Up To Date</p>
-        <h2 id="activeListingsHeading" class="text-3xl font-extrabold text-navy-900">Active Listings</h2>
-        <p class="text-gray-500 mt-2 max-w-xl mx-auto">Homes available right now across Allegheny County, Washington County, and Greater Pittsburgh.</p>
+        <p class="text-gold-500 text-xs font-bold uppercase tracking-widest mb-2">What Clients Say</p>
+        <h2 id="reviewsHeading" class="text-3xl font-extrabold text-navy-900">5.0 ★ on Zillow</h2>
+        <p class="text-gray-500 mt-2">Real reviews from buyers and sellers across the Pittsburgh region.</p>
       </div>
-
-      <!-- ── ZILLOW WIDGET GOES HERE ──────────────────────────────
-           1. Mario logs into https://www.zillow.com/agent-resources/
-           2. Go to Profile → Marketing Tools → Widgets
-           3. Copy the embed code and paste it below this comment
-           4. Remove this placeholder div when the widget is added
-      ─────────────────────────────────────────────────────────── -->
-      <div id="zillow-listings-widget" class="min-h-[300px] flex flex-col items-center justify-center bg-white rounded-2xl border-2 border-dashed border-gray-200 p-12 text-center">
-        <svg class="w-12 h-12 text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-        <p class="text-gray-400 font-semibold">Active listings will appear here automatically</p>
-        <p class="text-gray-400 text-sm mt-1">Powered by Zillow — updates in real time when new listings are added</p>
+      <div id="reviewsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Populated by JS -->
+        <div class="animate-pulse bg-gray-100 rounded-2xl h-48"></div>
+        <div class="animate-pulse bg-gray-100 rounded-2xl h-48"></div>
+        <div class="animate-pulse bg-gray-100 rounded-2xl h-48"></div>
+      </div>
+      <div class="text-center mt-8">
         <a href="https://www.zillow.com/profile/marioarudolph" target="_blank" rel="noopener noreferrer"
-           class="mt-6 inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white font-bold px-6 py-3 rounded-full text-sm transition-colors">
-          View All Listings on Zillow
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+           class="text-navy-900 font-semibold text-sm hover:text-gold-500 transition-colors underline">
+          Read all reviews on Zillow →
         </a>
       </div>
-
     </div>
   </section>
 
@@ -1037,6 +990,35 @@
           </div>
         </div>
 
+        <div class="faq-item pb-4">
+          <button class="faq-question w-full text-left flex justify-between items-start gap-4 py-2" onclick="toggleFaq(this)">
+            <span class="font-bold text-navy-900 text-base">What are the best Pittsburgh suburbs for families?</span>
+            <svg class="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="text-gray-600 text-sm leading-relaxed pt-2 pb-1">For families, the top Pittsburgh suburbs depend on budget and priorities. <strong>Top schools + luxury:</strong> Upper St. Clair and Mt. Lebanon. <strong>Strong schools + value:</strong> Bethel Park ($310K–$520K) with its highly regarded school district and family community. <strong>New construction + growth:</strong> North Hills with modern homes and fastest appreciation in the metro (3.6%). <strong>Budget-friendly family living:</strong> Washington County communities like Canonsburg offer quality family neighborhoods from $125K–$280K.</p>
+          </div>
+        </div>
+
+        <div class="faq-item pb-4">
+          <button class="faq-question w-full text-left flex justify-between items-start gap-4 py-2" onclick="toggleFaq(this)">
+            <span class="font-bold text-navy-900 text-base">Is Washington County PA a good place to invest in real estate?</span>
+            <svg class="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="text-gray-600 text-sm leading-relaxed pt-2 pb-1">Yes — <a href="/neighborhoods/washington-county.html" class="text-navy-900 font-semibold underline">Washington County</a> is an excellent emerging investment market. Homes average $130K–$350K (well below Allegheny County), with 2.5% annual appreciation and growing population. Key investment opportunities exist in Canonsburg's growing community, Washington city's downtown revitalization, and Charleroi's riverfront area. Its proximity to Pittsburgh via I-79 and Route 19 ensures ongoing demand from buyers priced out of Allegheny County.</p>
+          </div>
+        </div>
+
+        <div class="faq-item pb-4">
+          <button class="faq-question w-full text-left flex justify-between items-start gap-4 py-2" onclick="toggleFaq(this)">
+            <span class="font-bold text-navy-900 text-base">How do you create bidding wars when selling in Pittsburgh?</span>
+            <svg class="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="text-gray-600 text-sm leading-relaxed pt-2 pb-1">Our "perfect storm" strategy combines: (1) Strategic pricing that attracts multiple buyers without leaving money on the table, (2) Aggressive digital and social media marketing tailored to your specific Allegheny County or Washington County neighborhood, (3) Our strong industry network generating pre-qualified buyer interest before listing day, and (4) Professional presentation that maximizes perceived value. This approach has generated multiple competing offers across Pittsburgh neighborhoods and suburbs at all price points.</p>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -1205,22 +1187,14 @@
       }
     }
 
-    /* ── Live stats from env vars ── */
-    fetch('/api/stats').then(r => r.json()).then(d => {
-      const sc = document.getElementById('statSalesCount');
-      const sl = document.getElementById('statSalesLast12');
-      if (sc && d.salesCount)  sc.textContent = d.salesCount;
-      if (sl && d.salesLast12) sl.textContent = d.salesLast12;
-    }).catch(() => {});
-
-    /* ── Shared form submit helper — Formsubmit.co ── */
+    /* ── Shared form submit helper ── */
     async function submitForm(payload, btn, okEl, errEl, form) {
       btn.disabled = true;
       btn.textContent = 'Sending…';
       try {
-        const res = await fetch('https://formsubmit.co/ajax/mariorudolph@wesellanyhome.com', {
+        const res = await fetch('/api/contact', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
         });
         if (res.ok) {
@@ -1250,13 +1224,7 @@
       if (!name || !email) { err.classList.remove('hidden'); ok.classList.add('hidden'); return; }
       const btn = this.querySelector('[type=submit]');
       btn.dataset.label = btn.textContent;
-      submitForm({ name, email, area: this.area.value, intent: this.intent.value, formType: 'lead',
-        _subject: `New Pre-Approval Request — ${name}`,
-        _replyto: email,
-        _cc: 'mrudolph077@gmail.com,juliedilucia@wesellanyhome.com',
-        _bcc: 'bowenaistrategygroup@gmail.com',
-        _template: 'table',
-      }, btn, ok, err, this);
+      submitForm({ name, email, area: this.area.value, intent: this.intent.value, formType: 'lead' }, btn, ok, err, this);
     });
 
     /* ── Contact form ── */
@@ -1275,11 +1243,6 @@
         area: document.getElementById('cArea').value,
         message: document.getElementById('cMessage').value.trim(),
         formType: 'contact',
-        _subject: `New Contact Form — ${name}`,
-        _replyto: email,
-        _cc: 'mrudolph077@gmail.com,juliedilucia@wesellanyhome.com',
-        _bcc: 'bowenaistrategygroup@gmail.com',
-        _template: 'table',
       }, btn, ok, err, this);
     });
 
@@ -1326,11 +1289,6 @@
         phone: document.getElementById('gPhone').value.trim(),
         county, neighborhood,
         formType: 'guide',
-        _subject: `New Neighborhood Guide Request — ${name}`,
-        _replyto: email,
-        _cc: 'mrudolph077@gmail.com,juliedilucia@wesellanyhome.com',
-        _bcc: 'bowenaistrategygroup@gmail.com',
-        _template: 'table',
       }, btn, ok, err, this);
     });
 
@@ -1383,6 +1341,126 @@
 
     /* Init */
     calcPayment();
+
+    /* ── Live Listings + Reviews (from /api/listings) ── */
+    (async function loadListings() {
+      try {
+        const res  = await fetch('/api/listings');
+        if (!res.ok) throw new Error('Listings API error');
+        const data = await res.json();
+
+        /* Update stats bar */
+        const m = data._meta || {};
+        if (m.total_sales)       document.getElementById('stat-total-sales').textContent = m.total_sales;
+        if (m.sales_last_12_months) document.getElementById('stat-sales-12mo').textContent = m.sales_last_12_months;
+        if (m.avg_sale_price) {
+          const k = m.avg_sale_price >= 1000 ? '$' + Math.round(m.avg_sale_price / 1000) + 'K' : '$' + m.avg_sale_price.toLocaleString();
+          document.getElementById('stat-avg-price').textContent = k;
+        }
+        if (m.zillow_rating) document.getElementById('stat-rating').textContent = m.zillow_rating + ' ★';
+
+        /* ── Listing card builder ── */
+        function buildCard(listing) {
+          const isActive = listing.status !== 'Sold';
+          const badge = isActive
+            ? '<span class="absolute top-3 left-3 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">For Sale</span>'
+            : '<span class="absolute top-3 left-3 bg-navy-900 text-white text-xs font-bold px-3 py-1 rounded-full">Sold</span>';
+
+          const domLine = isActive && listing.days_on_market != null
+            ? `<p class="text-green-600 text-xs font-semibold mt-1">${listing.days_on_market} days on market</p>`
+            : listing.sold_date
+              ? `<p class="text-gray-400 text-xs mt-1">Sold ${new Date(listing.sold_date).toLocaleDateString('en-US', {month:'short', year:'numeric'})}</p>`
+              : '';
+
+          const sqft = listing.sqft ? `&nbsp;·&nbsp; ${listing.sqft.toLocaleString()} sq ft` : '';
+          const price = '$' + listing.price.toLocaleString();
+
+          return `
+            <article class="listing-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100">
+              <div class="relative">
+                <img src="${listing.photo}"
+                  alt="${listing.beds} bed ${listing.baths} bath home in ${listing.city} PA"
+                  class="w-full h-48 object-cover" loading="lazy" />
+                ${badge}
+              </div>
+              <div class="p-4">
+                <p class="text-xl font-extrabold text-navy-900">${price}</p>
+                <p class="text-gray-600 text-sm mt-1">${listing.beds} Bed &nbsp;·&nbsp; ${listing.baths} Bath${sqft}</p>
+                <p class="text-gray-500 text-xs mt-1">${listing.city}, PA · ${listing.county} County</p>
+                ${domLine}
+                <a href="${listing.zillow_url}" target="_blank" rel="noopener noreferrer"
+                   class="mt-3 block text-center border border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white rounded-lg py-2 text-sm font-semibold transition-colors">
+                  View on Zillow
+                </a>
+              </div>
+            </article>`;
+        }
+
+        /* Render active listings */
+        const activeGrid = document.getElementById('activeListingsGrid');
+        const active = data.active_listings || [];
+        if (active.length === 0) {
+          activeGrid.innerHTML = '';
+          document.getElementById('noActiveListings').classList.remove('hidden');
+        } else {
+          activeGrid.innerHTML = active.map(buildCard).join('');
+        }
+
+        /* Render sold listings */
+        const soldGrid = document.getElementById('soldListingsGrid');
+        const sold = data.sold_listings || [];
+        soldGrid.innerHTML = sold.map(buildCard).join('');
+
+        /* Render reviews */
+        const reviewsGrid = document.getElementById('reviewsGrid');
+        const reviews = data.reviews || [];
+        if (reviews.length > 0) {
+          reviewsGrid.innerHTML = reviews.map(r => `
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+              <div class="flex items-center gap-1 mb-3">
+                ${'<svg class="w-4 h-4 text-gold-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>'.repeat(r.rating)}
+              </div>
+              <p class="text-gray-700 text-sm leading-relaxed mb-4">"${r.text}"</p>
+              <div class="flex justify-between items-center">
+                <div>
+                  <p class="font-bold text-navy-900 text-sm">${r.author}</p>
+                  <p class="text-gray-400 text-xs">${r.type === 'buyer' ? 'Buyer' : 'Seller'} · ${r.neighborhood}</p>
+                </div>
+                <p class="text-gray-300 text-xs">${new Date(r.date).toLocaleDateString('en-US', {month:'short', year:'numeric'})}</p>
+              </div>
+            </div>`).join('');
+        }
+
+      } catch (err) {
+        /* On error: keep skeleton hidden, silently degrade — static content still shows */
+        console.warn('Live listings unavailable:', err.message);
+        document.getElementById('activeListingsGrid').innerHTML = '';
+        document.getElementById('noActiveListings').classList.remove('hidden');
+      }
+    })();
+
+    /* ── Listings tab toggle ── */
+    function showTab(tab) {
+      const activeGrid = document.getElementById('activeListingsGrid');
+      const soldGrid   = document.getElementById('soldListingsGrid');
+      const noActive   = document.getElementById('noActiveListings');
+      const tabActive  = document.getElementById('tabActive');
+      const tabSold    = document.getElementById('tabSold');
+
+      if (tab === 'active') {
+        activeGrid.classList.remove('hidden');
+        noActive.classList.add('hidden');   // let the loader re-evaluate
+        soldGrid.classList.add('hidden');
+        tabActive.className = 'px-6 py-2 rounded-full text-sm font-bold bg-green-600 text-white transition-colors';
+        tabSold.className   = 'px-6 py-2 rounded-full text-sm font-bold bg-white border border-gray-300 text-gray-600 hover:border-navy-900 transition-colors';
+      } else {
+        soldGrid.classList.remove('hidden');
+        activeGrid.classList.add('hidden');
+        noActive.classList.add('hidden');
+        tabSold.className   = 'px-6 py-2 rounded-full text-sm font-bold bg-navy-900 text-white transition-colors';
+        tabActive.className = 'px-6 py-2 rounded-full text-sm font-bold bg-white border border-gray-300 text-gray-600 hover:border-navy-900 transition-colors';
+      }
+    }
   </script>
 
   <!-- ═══════════════════════════════════════════════════════════
