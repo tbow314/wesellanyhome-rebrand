@@ -404,11 +404,11 @@
   <section class="bg-white border-b border-gray-100 py-8" aria-label="Team statistics">
     <div class="max-w-5xl mx-auto px-4 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
       <div>
-        <p class="text-4xl font-extrabold text-navy-900">171</p>
+        <p id="statSalesCount" class="text-4xl font-extrabold text-navy-900">171</p>
         <p class="text-gray-500 text-sm mt-1">Total Sales</p>
       </div>
       <div>
-        <p class="text-4xl font-extrabold text-navy-900">20</p>
+        <p id="statSalesLast12" class="text-4xl font-extrabold text-navy-900">20</p>
         <p class="text-gray-500 text-sm mt-1">Sales Last 12 Months</p>
       </div>
       <div>
@@ -635,6 +635,40 @@
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       ACTIVE LISTINGS — ZILLOW WIDGET
+       To activate: Mario logs into Zillow Premier Agent →
+       Profile → Widgets → copy embed code → paste inside the
+       div below replacing the placeholder comment.
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="active-listings" class="py-16 bg-gray-50" aria-labelledby="activeListingsHeading">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <p class="text-gold-500 text-xs font-bold uppercase tracking-widest mb-2">Always Up To Date</p>
+        <h2 id="activeListingsHeading" class="text-3xl font-extrabold text-navy-900">Active Listings</h2>
+        <p class="text-gray-500 mt-2 max-w-xl mx-auto">Homes available right now across Allegheny County, Washington County, and Greater Pittsburgh.</p>
+      </div>
+
+      <!-- ── ZILLOW WIDGET GOES HERE ──────────────────────────────
+           1. Mario logs into https://www.zillow.com/agent-resources/
+           2. Go to Profile → Marketing Tools → Widgets
+           3. Copy the embed code and paste it below this comment
+           4. Remove this placeholder div when the widget is added
+      ─────────────────────────────────────────────────────────── -->
+      <div id="zillow-listings-widget" class="min-h-[300px] flex flex-col items-center justify-center bg-white rounded-2xl border-2 border-dashed border-gray-200 p-12 text-center">
+        <svg class="w-12 h-12 text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <p class="text-gray-400 font-semibold">Active listings will appear here automatically</p>
+        <p class="text-gray-400 text-sm mt-1">Powered by Zillow — updates in real time when new listings are added</p>
+        <a href="https://www.zillow.com/profile/marioarudolph" target="_blank" rel="noopener noreferrer"
+           class="mt-6 inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white font-bold px-6 py-3 rounded-full text-sm transition-colors">
+          View All Listings on Zillow
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
     </div>
   </section>
 
@@ -1170,6 +1204,14 @@
         icon.style.transform = 'rotate(180deg)';
       }
     }
+
+    /* ── Live stats from env vars ── */
+    fetch('/api/stats').then(r => r.json()).then(d => {
+      const sc = document.getElementById('statSalesCount');
+      const sl = document.getElementById('statSalesLast12');
+      if (sc && d.salesCount)  sc.textContent = d.salesCount;
+      if (sl && d.salesLast12) sl.textContent = d.salesLast12;
+    }).catch(() => {});
 
     /* ── Shared form submit helper ── */
     async function submitForm(payload, btn, okEl, errEl, form) {

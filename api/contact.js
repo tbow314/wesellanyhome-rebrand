@@ -1,9 +1,9 @@
-// Vercel Serverless Function — handles all form submissions
-// FROM: BowenAIstrategygroup@gmail.com (Gmail SMTP)
-// TO:   mariorudolph@wesellanyhome.com
-// BCC:  BowenAIstrategygroup@gmail.com
-
-const nodemailer = require('nodemailer');
+// Vercel Serverless Function — handles all form submissions via Resend
+// Reusable across all client sites — recipients controlled via env vars:
+//   RESEND_API_KEY   — your Resend API key (same across all projects)
+//   CONTACT_FROM     — sender address e.g. noreply@bowenaistrategygroup.com
+//   CONTACT_TO       — comma-separated recipient emails
+//   CONTACT_BCC      — comma-separated BCC emails (your agency address)
 
 module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -60,7 +60,7 @@ module.exports = async function handler(req, res) {
         <table style="width:100%;border-collapse:collapse;">${rows}</table>
         <div style="padding:16px 24px;background:#f9fafb;border-top:1px solid #f3f4f6;">
           <p style="margin:0;color:#374151;font-size:13px;">
-            Reply directly to this email to reach <strong>${name}</strong>.
+            Reply directly to this email to reach <strong>${name}</strong> at ${email}.
           </p>
         </div>
       </div>
@@ -70,22 +70,31 @@ module.exports = async function handler(req, res) {
     </div>`;
 
   try {
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD,
+    const toList  = (process.env.CONTACT_TO  || '').split(',').map(s => s.trim()).filter(Boolean);
+    const bccList = (process.env.CONTACT_BCC || '').split(',').map(s => s.trim()).filter(Boolean);
+    const from    = process.env.CONTACT_FROM || 'We Sell Any Home <noreply@bowenaistrategygroup.com>';
+
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
       },
+      body: JSON.stringify({
+        from,
+        to:       toList,
+        bcc:      bccList,
+        reply_to: email,
+        subject:  `🏠 New ${label} — ${name}`,
+        html,
+      }),
     });
 
-    await transporter.sendMail({
-      from:    `"We Sell Any Home" <${process.env.GMAIL_USER}>`,
-      to:      'mariorudolph@wesellanyhome.com',
-      bcc:     'BowenAIstrategygroup@gmail.com',
-      replyTo: email,
-      subject: `🏠 New ${label} — ${name}`,
-      html,
-    });
+    if (!response.ok) {
+      const err = await response.text();
+      console.error('Resend error:', err);
+      return res.status(500).json({ error: 'Email delivery failed' });
+    }
 
     return res.status(200).json({ success: true });
   } catch (err) {
