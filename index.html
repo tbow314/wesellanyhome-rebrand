@@ -1192,17 +1192,19 @@
       btn.disabled = true;
       btn.textContent = 'Sending…';
       try {
-        const res = await fetch('/api/contact', {
+        const fd = new FormData();
+        Object.entries(payload).forEach(([k, v]) => { if (v !== undefined && v !== null && v !== '') fd.append(k, v); });
+        const res = await fetch('https://formsubmit.co/ajax/mariorudolph@wesellanyhome.com', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
+          body: fd,
         });
-        if (res.ok) {
+        const data = await res.json();
+        if (data.success === 'true' || data.success === true) {
           okEl.classList.remove('hidden');
           errEl.classList.add('hidden');
           form.reset();
         } else {
-          throw new Error('Server error');
+          throw new Error('Submission failed');
         }
       } catch {
         errEl.textContent = 'Something went wrong. Please email us directly at mariorudolph@wesellanyhome.com';
