@@ -1213,14 +1213,14 @@
       if (sl && d.salesLast12) sl.textContent = d.salesLast12;
     }).catch(() => {});
 
-    /* ── Shared form submit helper ── */
+    /* ── Shared form submit helper — Formsubmit.co ── */
     async function submitForm(payload, btn, okEl, errEl, form) {
       btn.disabled = true;
       btn.textContent = 'Sending…';
       try {
-        const res = await fetch('/api/contact', {
+        const res = await fetch('https://formsubmit.co/ajax/mariorudolph@wesellanyhome.com', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify(payload),
         });
         if (res.ok) {
@@ -1250,7 +1250,13 @@
       if (!name || !email) { err.classList.remove('hidden'); ok.classList.add('hidden'); return; }
       const btn = this.querySelector('[type=submit]');
       btn.dataset.label = btn.textContent;
-      submitForm({ name, email, area: this.area.value, intent: this.intent.value, formType: 'lead' }, btn, ok, err, this);
+      submitForm({ name, email, area: this.area.value, intent: this.intent.value, formType: 'lead',
+        _subject: `New Pre-Approval Request — ${name}`,
+        _replyto: email,
+        _cc: 'mrudolph077@gmail.com,juliedilucia@wesellanyhome.com',
+        _bcc: 'bowenaistrategygroup@gmail.com',
+        _template: 'table',
+      }, btn, ok, err, this);
     });
 
     /* ── Contact form ── */
@@ -1269,6 +1275,11 @@
         area: document.getElementById('cArea').value,
         message: document.getElementById('cMessage').value.trim(),
         formType: 'contact',
+        _subject: `New Contact Form — ${name}`,
+        _replyto: email,
+        _cc: 'mrudolph077@gmail.com,juliedilucia@wesellanyhome.com',
+        _bcc: 'bowenaistrategygroup@gmail.com',
+        _template: 'table',
       }, btn, ok, err, this);
     });
 
@@ -1315,6 +1326,11 @@
         phone: document.getElementById('gPhone').value.trim(),
         county, neighborhood,
         formType: 'guide',
+        _subject: `New Neighborhood Guide Request — ${name}`,
+        _replyto: email,
+        _cc: 'mrudolph077@gmail.com,juliedilucia@wesellanyhome.com',
+        _bcc: 'bowenaistrategygroup@gmail.com',
+        _template: 'table',
       }, btn, ok, err, this);
     });
 
