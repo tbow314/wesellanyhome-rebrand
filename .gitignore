@@ -1,0 +1,11 @@
+# Large unused videos
+assets/videos/pittsburgh-skyline.mp4
+
+# Secrets
+client-credentials.md
+.env
+.env.local
+
+# Python cache
+__pycache__/
+*.pyc

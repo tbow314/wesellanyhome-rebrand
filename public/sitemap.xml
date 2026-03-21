@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage - Most important page -->
+  <url>
+    <loc>https://wesellanyhome.vercel.app/</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://wesellanyhome.vercel.app/assets/images/howard-hanna-logo.svg</image:loc>
+      <image:title>We Sell Any Home - Howard Hanna Real Estate</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://static.wixstatic.com/media/e7b241_3760da4deb8a4b49be3413aa335fdded~mv2.jpg</image:loc>
+      <image:title>Pittsburgh Pennsylvania skyline at night</image:title>
+    </image:image>
+  </url>
+
+  <!-- Alternative homepage (without trailing slash) -->
+  <url>
+    <loc>https://wesellanyhome.vercel.app</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+</urlset>

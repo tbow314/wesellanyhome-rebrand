@@ -1,0 +1,151 @@
+{
+  "_meta": {
+    "last_updated": "2026-03-15",
+    "total_sales": 171,
+    "sales_last_12_months": 20,
+    "avg_sale_price": 246000,
+    "zillow_rating": "5.0",
+    "zillow_review_count": 17
+  },
+  "active_listings": [
+    {
+      "id": "active-1",
+      "status": "For Sale",
+      "status_color": "green",
+      "price": 289000,
+      "address": "123 Maple Ave",
+      "city": "Mt. Lebanon",
+      "state": "PA",
+      "county": "Allegheny",
+      "beds": 3,
+      "baths": 2,
+      "sqft": 1850,
+      "photo": "https://photos.zillowstatic.com/fp/703bb51cf62ce7c6a6cd528972a21777-p_d.jpg",
+      "zillow_url": "https://www.zillow.com/profile/marioarudolph",
+      "days_on_market": 5,
+      "description": "Updated Cape Cod in top-rated Mt. Lebanon school district. New kitchen, hardwood floors throughout.",
+      "mls_id": ""
+    }
+  ],
+  "sold_listings": [
+    {
+      "id": "sold-1",
+      "status": "Sold",
+      "status_color": "navy",
+      "price": 525000,
+      "sold_date": "2026-02-10",
+      "address": "456 Pine Rd",
+      "city": "Canonsburg",
+      "state": "PA",
+      "county": "Washington",
+      "beds": 4,
+      "baths": 4,
+      "sqft": 3004,
+      "photo": "https://photos.zillowstatic.com/fp/703bb51cf62ce7c6a6cd528972a21777-p_d.jpg",
+      "zillow_url": "https://www.zillow.com/profile/marioarudolph",
+      "days_on_market": 8,
+      "description": ""
+    },
+    {
+      "id": "sold-2",
+      "status": "Sold",
+      "status_color": "navy",
+      "price": 120000,
+      "sold_date": "2026-01-22",
+      "address": "789 Oak St",
+      "city": "Clairton",
+      "state": "PA",
+      "county": "Allegheny",
+      "beds": 3,
+      "baths": 2,
+      "sqft": 1200,
+      "photo": "https://photos.zillowstatic.com/fp/c25ffea56990c039591f66f2827e63dc-p_d.jpg",
+      "zillow_url": "https://www.zillow.com/profile/marioarudolph",
+      "days_on_market": 12,
+      "description": ""
+    },
+    {
+      "id": "sold-3",
+      "status": "Sold",
+      "status_color": "navy",
+      "price": 365000,
+      "sold_date": "2026-01-05",
+      "address": "321 Elm Dr",
+      "city": "Bethel Park",
+      "state": "PA",
+      "county": "Allegheny",
+      "beds": 4,
+      "baths": 3,
+      "sqft": 2450,
+      "photo": "https://photos.zillowstatic.com/fp/703bb51cf62ce7c6a6cd528972a21777-p_d.jpg",
+      "zillow_url": "https://www.zillow.com/profile/marioarudolph",
+      "days_on_market": 6,
+      "description": ""
+    },
+    {
+      "id": "sold-4",
+      "status": "Sold",
+      "status_color": "navy",
+      "price": 195000,
+      "sold_date": "2025-12-18",
+      "address": "654 Cedar Ln",
+      "city": "North Hills",
+      "state": "PA",
+      "county": "Allegheny",
+      "beds": 3,
+      "baths": 2,
+      "sqft": 1600,
+      "photo": "https://photos.zillowstatic.com/fp/c25ffea56990c039591f66f2827e63dc-p_d.jpg",
+      "zillow_url": "https://www.zillow.com/profile/marioarudolph",
+      "days_on_market": 4,
+      "description": ""
+    }
+  ],
+  "reviews": [
+    {
+      "id": "review-1",
+      "author": "Sarah M.",
+      "date": "2026-02-15",
+      "rating": 5,
+      "text": "Mario made selling our home in Mt. Lebanon completely stress-free. We had multiple offers within 3 days and sold above asking price. His knowledge of the local market is unmatched.",
+      "type": "seller",
+      "neighborhood": "Mt. Lebanon"
+    },
+    {
+      "id": "review-2",
+      "author": "James & Tina R.",
+      "date": "2026-01-28",
+      "rating": 5,
+      "text": "As first-time buyers, we were nervous about the process. Mario walked us through every step and got us pre-approved in under 12 hours. We found our dream home in Bethel Park and closed in 3 weeks!",
+      "type": "buyer",
+      "neighborhood": "Bethel Park"
+    },
+    {
+      "id": "review-3",
+      "author": "David K.",
+      "date": "2025-12-10",
+      "rating": 5,
+      "text": "Professional, responsive, and results-driven. Mario sold our Canonsburg property for $15K over asking. His bidding war strategy really works.",
+      "type": "seller",
+      "neighborhood": "Canonsburg"
+    },
+    {
+      "id": "review-4",
+      "author": "Angela W.",
+      "date": "2025-11-30",
+      "rating": 5,
+      "text": "We were relocating from out of state and needed someone who truly knew the Pittsburgh suburbs. Mario had us in our new home in Upper St. Clair within 6 weeks. Incredible service.",
+      "type": "buyer",
+      "neighborhood": "Upper St. Clair"
+    },
+    {
+      "id": "review-5",
+      "author": "Mike & Linda P.",
+      "date": "2025-10-15",
+      "rating": 5,
+      "text": "Used Mario for our second home purchase in Monroeville. Same great experience — fast, communicative, and he knows every neighborhood in Allegheny County inside and out.",
+      "type": "buyer",
+      "neighborhood": "Monroeville"
+    }
+  ]
+}
