@@ -249,14 +249,21 @@
 
       <!-- Left: Brand logo + team name -->
       <a href="/" aria-label="We Sell Any Home – Home" class="flex items-center gap-2">
+        <!-- Logo: desktop only -->
         <img
           src="/assets/images/logo-we-sell.png"
           alt="We Sell Any Home"
-          class="h-10 lg:h-12 w-auto object-contain rounded flex-shrink-0"
+          class="hidden lg:block h-12 w-auto object-contain rounded flex-shrink-0"
         />
+        <!-- Text: desktop only alongside logo -->
         <span class="hidden lg:flex flex-col leading-tight">
-          <span class="text-gold-400 font-extrabold text-xs lg:text-sm uppercase tracking-widest">We Sell Any Home</span>
+          <span class="text-gold-400 font-extrabold text-sm uppercase tracking-widest">We Sell Any Home</span>
           <span class="text-gray-300 text-xs tracking-wide">The Mario A. Rudolph Team</span>
+        </span>
+        <!-- Mobile only: compact text wordmark -->
+        <span class="lg:hidden flex flex-col leading-tight">
+          <span class="text-gold-400 font-extrabold text-xs uppercase tracking-widest">We Sell Any Home</span>
+          <span class="text-gray-300 text-xs">The Mario A. Rudolph Team</span>
         </span>
       </a>
 
