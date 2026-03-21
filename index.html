@@ -1135,7 +1135,7 @@
     /* ── Live Listings + Reviews (from /api/listings) ── */
     (async function loadListings() {
       try {
-        const res  = await fetch('/api/listings');
+        const res = await fetch('/data/listings.json');
         if (!res.ok) throw new Error('Listings API error');
         const data = await res.json();
 
@@ -1204,7 +1204,7 @@
         /* Render reviews */
         const reviewsGrid = document.getElementById('reviewsGrid');
         const reviews = data.reviews || [];
-        if (reviews.length > 0) {
+        if (reviewsGrid && reviews.length > 0) {
           reviewsGrid.innerHTML = reviews.map(r => `
             <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
               <div class="flex items-center gap-1 mb-3">
