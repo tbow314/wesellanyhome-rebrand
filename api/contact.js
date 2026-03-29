@@ -90,12 +90,13 @@ module.exports = async function handler(req, res) {
       }),
     });
 
+    const resBody = await response.json();
     if (!response.ok) {
-      const err = await response.text();
-      console.error('Resend error:', err);
-      return res.status(500).json({ error: 'Email delivery failed' });
+      console.error('Resend error:', response.status, JSON.stringify(resBody));
+      return res.status(500).json({ error: 'Email delivery failed', detail: resBody });
     }
 
+    console.log('Resend success:', resBody.id);
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error('Mail error:', err.message);
