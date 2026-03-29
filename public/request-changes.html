@@ -52,7 +52,7 @@
       ✓ Your request has been submitted. We'll be in touch within 1–2 business days.
     </div>
 
-    <form id="change-request-form" class="space-y-6" novalidate>
+    <form id="change-request-form" action="https://formspree.io/f/mrbzgqvp" method="POST" class="space-y-6" novalidate>
 
       <!-- Contact Info -->
       <div class="bg-navy-800 border border-white/10 rounded-xl p-6 space-y-4">
@@ -184,10 +184,10 @@
     const form = document.getElementById('change-request-form');
     const successMsg = document.getElementById('success-message');
 
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
-      // Basic validation
+      // Validation
       const required = form.querySelectorAll('[required]');
       let valid = true;
       required.forEach(function (field) {
@@ -198,36 +198,35 @@
           field.classList.remove('border-red-500');
         }
       });
-
       if (!valid) return;
 
-      // Collect form data for mailto fallback
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const changeType = document.getElementById('change-type').value;
-      const pageLocation = document.getElementById('page-location').value.trim();
-      const description = document.getElementById('description').value.trim();
-      const priority = form.querySelector('input[name="priority"]:checked').value;
-      const notes = document.getElementById('additional-notes').value.trim();
+      const submitBtn = form.querySelector('[type="submit"]');
+      submitBtn.textContent = 'Sending…';
+      submitBtn.disabled = true;
 
-      const subject = encodeURIComponent('Website Change Request – ' + changeType + ' (' + priority + ')');
-      const body = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'Email: ' + email + '\n' +
-        'Type: ' + changeType + '\n' +
-        'Page/Section: ' + pageLocation + '\n' +
-        'Priority: ' + priority + '\n\n' +
-        'Description:\n' + description + '\n\n' +
-        'Additional Notes:\n' + (notes || 'N/A')
-      );
+      try {
+        const data = new FormData(form);
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { Accept: 'application/json' }
+        });
 
-      window.location.href = 'mailto:mariorudolph@wesellanyhome.com?subject=' + subject + '&body=' + body;
-
-      // Show success message
-      form.style.opacity = '0.4';
-      form.style.pointerEvents = 'none';
-      successMsg.classList.remove('hidden');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (response.ok) {
+          form.style.opacity = '0.4';
+          form.style.pointerEvents = 'none';
+          successMsg.classList.remove('hidden');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          submitBtn.textContent = 'Submit Request →';
+          submitBtn.disabled = false;
+          alert('Something went wrong. Please email mariorudolph@wesellanyhome.com directly.');
+        }
+      } catch (err) {
+        submitBtn.textContent = 'Submit Request →';
+        submitBtn.disabled = false;
+        alert('Network error. Please email mariorudolph@wesellanyhome.com directly.');
+      }
     });
   </script>
 
