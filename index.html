@@ -1021,18 +1021,18 @@
       }
     }
 
-    /* ── Shared form submit helper ── */
+    /* ── Shared form submit helper (Formspree) ── */
     async function submitForm(payload, btn, okEl, errEl, form) {
       btn.disabled = true;
       btn.textContent = 'Sending…';
       try {
-        const res = await fetch('/api/contact', {
+        const res = await fetch('https://formspree.io/f/mreyorwj', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify(payload),
         });
         const data = await res.json();
-        if (data.success) {
+        if (data.ok || data.success) {
           okEl.classList.remove('hidden');
           errEl.classList.add('hidden');
           form.reset();
