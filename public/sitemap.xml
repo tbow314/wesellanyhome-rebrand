@@ -1,29 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Homepage - Most important page -->
+  <!-- Homepage -->
   <url>
-    <loc>https://wesellanyhome.vercel.app/</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://wesellanyhome.vercel.app/assets/images/howard-hanna-logo.svg</image:loc>
-      <image:title>We Sell Any Home - Howard Hanna Real Estate</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://static.wixstatic.com/media/e7b241_3760da4deb8a4b49be3413aa335fdded~mv2.jpg</image:loc>
-      <image:title>Pittsburgh Pennsylvania skyline at night</image:title>
-    </image:image>
-  </url>
-
-  <!-- Alternative homepage (without trailing slash) -->
-  <url>
-    <loc>https://wesellanyhome.vercel.app</loc>
-    <lastmod>2026-03-13</lastmod>
+    <loc>https://www.wesellanyhome.com/</loc>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Neighborhood Guides -->
+  <url>
+    <loc>https://www.wesellanyhome.com/neighborhoods/allegheny-county.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.wesellanyhome.com/neighborhoods/washington-county.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.wesellanyhome.com/neighborhoods/mt-lebanon.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.wesellanyhome.com/neighborhoods/upper-st-clair.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.wesellanyhome.com/neighborhoods/bethel-park.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.wesellanyhome.com/neighborhoods/north-hills.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.wesellanyhome.com/neighborhoods/monroeville.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.wesellanyhome.com/neighborhoods/penn-hills.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.wesellanyhome.com/neighborhoods/shadyside.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.wesellanyhome.com/neighborhoods/lawrenceville.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.wesellanyhome.com/neighborhoods/strip-district.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.wesellanyhome.com/neighborhoods/southside.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.wesellanyhome.com/neighborhoods/downtown.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Local Intel (articles) — will be added when published -->
 
 </urlset>
