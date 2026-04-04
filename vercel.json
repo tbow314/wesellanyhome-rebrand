@@ -12,7 +12,7 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!api/|local-intel/|neighborhoods/|public/).*)",
+      "source": "/((?!api/|local-intel/|neighborhoods/|public/|robots\\.txt|sitemap\\.xml|llms\\.txt|favicon\\.ico|request-changes\\.html).*)",
       "destination": "/index.html"
     }
   ]
