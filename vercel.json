@@ -11,8 +11,12 @@
     { "path": "/api/sync-zillow", "schedule": "0 13 * * *" }
   ],
   "rewrites": [
+    { "source": "/robots.txt", "destination": "/public/robots.txt" },
+    { "source": "/sitemap.xml", "destination": "/public/sitemap.xml" },
+    { "source": "/llms.txt", "destination": "/public/llms.txt" },
+    { "source": "/favicon.ico", "destination": "/public/favicon.ico" },
     {
-      "source": "/((?!api/|local-intel/|neighborhoods/|public/|robots\\.txt|sitemap\\.xml|llms\\.txt|favicon\\.ico|request-changes\\.html).*)",
+      "source": "/((?!api/|local-intel/|neighborhoods/|public/).*)",
       "destination": "/index.html"
     }
   ]
