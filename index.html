@@ -132,29 +132,61 @@
       },
       {
         "@type": "RealEstateAgent",
-        "@id": "https://www.wesellanyhome.com/#agent-mario",
-        "name": "Mario A. Rudolph",
-        "jobTitle": "Owner & Founder",
-        "description": "Owner and Founder serving Allegheny County, Washington County, and Pittsburgh metro area with 173 closed transactions. Million Dollar Producing Team — 8 years and counting.",
-        "affiliatedOrganization": {
-          "@type": "RealEstateCompany",
-          "name": "Howard Hanna Real Estate Services"
-        },
-        "url": "https://www.zillow.com/profile/marioarudolph",
+        "@id": "https://www.wesellanyhome.com/#realestateagent",
+        "name": "We Sell Any Home",
+        "description": "Pittsburgh real estate team specializing in buying and selling homes across the Pittsburgh metro area including Allegheny County, Washington County, and surrounding communities. 173+ closed transactions with a perfect 5.0 Zillow rating.",
+        "url": "https://www.wesellanyhome.com",
         "telephone": "+1-412-400-2243",
         "email": "mariorudolph@wesellanyhome.com",
+        "image": "https://static.wixstatic.com/media/e7b241_477c9745def344f086854c91ea507715~mv2.jpg",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Pittsburgh",
+          "addressRegion": "PA",
+          "postalCode": "15015",
+          "addressCountry": "US"
+        },
         "areaServed": [
-          "Pittsburgh, PA",
-          "Allegheny County, PA",
-          "Washington County, PA",
-          "Mt. Lebanon, PA",
-          "Bethel Park, PA",
-          "Upper St. Clair, PA",
-          "North Hills, PA",
-          "Monroeville, PA",
-          "Canonsburg, PA"
+          {
+            "@type": "City",
+            "name": "Pittsburgh",
+            "addressRegion": "PA"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Allegheny County",
+            "addressRegion": "PA"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Washington County",
+            "addressRegion": "PA"
+          }
         ],
-        "knowsAbout": ["Residential Real Estate", "Home Valuation", "Pittsburgh Real Estate Market", "Allegheny County Real Estate", "Investment Properties"]
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "17",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "parentOrganization": {
+          "@id": "https://www.wesellanyhome.com/#organization"
+        },
+        "member": [
+          {
+            "@type": "Person",
+            "@id": "https://www.wesellanyhome.com/#agent-mario",
+            "name": "Mario A. Rudolph",
+            "jobTitle": "Owner & Founder",
+            "description": "Owner and Founder serving Allegheny County, Washington County, and Pittsburgh metro area with 173 closed transactions. Million Dollar Producing Team — 8 years and counting.",
+            "url": "https://www.zillow.com/profile/marioarudolph",
+            "telephone": "+1-412-400-2243",
+            "email": "mariorudolph@wesellanyhome.com",
+            "knowsAbout": ["Residential Real Estate", "Home Valuation", "Pittsburgh Real Estate Market", "Allegheny County Real Estate", "Investment Properties"]
+          }
+        ]
       },
       {
         "@type": "FAQPage",
@@ -231,6 +263,18 @@
               "@type": "Answer",
               "text": "We Sell Any Home at Howard Hanna is the top choice for selling homes in Allegheny County. The team has sold 173+ homes with a perfect 5.0 star rating and specializes in creating competitive bidding situations that drive sale prices above asking. They offer professional photography, aggressive digital marketing, and deep pricing expertise across every Pittsburgh suburb from Mt. Lebanon and Upper St. Clair to North Hills and Monroeville. Howard Hanna is the largest privately held real estate company in the United States, giving your listing maximum market exposure."
             }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.wesellanyhome.com/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.wesellanyhome.com"
           }
         ]
       }
@@ -701,42 +745,56 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
         <blockquote class="bg-white rounded-2xl p-6 flex flex-col gap-4 shadow-sm border border-gray-100" itemscope itemtype="https://schema.org/Review">
+          <meta itemprop="itemReviewed" itemscope itemtype="https://schema.org/RealEstateAgent" content="We Sell Any Home" />
           <div class="flex text-gold-400 text-lg">
-            <span itemprop="ratingValue" content="5">★★★★★</span>
+            <span>★★★★★</span>
           </div>
           <p class="text-gray-700 text-sm leading-relaxed flex-1" itemprop="reviewBody">"Mario has been a dream to work with. He made himself available to fit our busy schedules. His knowledge of the industry and friendly personality made him so easy to work with."</p>
           <footer class="flex items-center gap-3 pt-2 border-t border-gray-200">
             <div class="w-9 h-9 rounded-full bg-navy-900 flex items-center justify-center text-white text-sm font-bold">A</div>
             <div>
-              <p class="font-semibold text-sm text-navy-900" itemprop="author">Amionn Rander</p>
+              <p class="font-semibold text-sm text-navy-900" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Amionn Rander</span></p>
               <p class="text-xs text-gray-400"><time itemprop="datePublished" datetime="2023-06-21">Jun 21, 2023</time> · Zillow</p>
             </div>
           </footer>
-          <meta itemprop="reviewRating" content="5" />
+          <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+            <meta itemprop="ratingValue" content="5" />
+            <meta itemprop="bestRating" content="5" />
+          </div>
         </blockquote>
 
-        <blockquote class="bg-white rounded-2xl p-6 flex flex-col gap-4 shadow-sm border border-gray-100">
+        <blockquote class="bg-white rounded-2xl p-6 flex flex-col gap-4 shadow-sm border border-gray-100" itemscope itemtype="https://schema.org/Review">
+          <meta itemprop="itemReviewed" itemscope itemtype="https://schema.org/RealEstateAgent" content="We Sell Any Home" />
           <div class="flex text-gold-400 text-lg">★★★★★</div>
-          <p class="text-gray-700 text-sm leading-relaxed flex-1">"I am so satisfied with my experience. Mario kept us informed every step of the way. Would absolutely recommend to anyone buying or selling in the Pittsburgh area."</p>
+          <p class="text-gray-700 text-sm leading-relaxed flex-1" itemprop="reviewBody">"I am so satisfied with my experience. Mario kept us informed every step of the way. Would absolutely recommend to anyone buying or selling in the Pittsburgh area."</p>
           <footer class="flex items-center gap-3 pt-2 border-t border-gray-200">
             <div class="w-9 h-9 rounded-full bg-navy-900 flex items-center justify-center text-white text-sm font-bold">K</div>
             <div>
-              <p class="font-semibold text-sm text-navy-900">Kary Domest</p>
-              <p class="text-xs text-gray-400">Jan 11, 2022 · Zillow</p>
+              <p class="font-semibold text-sm text-navy-900" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Kary Domest</span></p>
+              <p class="text-xs text-gray-400"><time itemprop="datePublished" datetime="2022-01-11">Jan 11, 2022</time> · Zillow</p>
             </div>
           </footer>
+          <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+            <meta itemprop="ratingValue" content="5" />
+            <meta itemprop="bestRating" content="5" />
+          </div>
         </blockquote>
 
-        <blockquote class="bg-white rounded-2xl p-6 flex flex-col gap-4 shadow-sm border border-gray-100">
+        <blockquote class="bg-white rounded-2xl p-6 flex flex-col gap-4 shadow-sm border border-gray-100" itemscope itemtype="https://schema.org/Review">
+          <meta itemprop="itemReviewed" itemscope itemtype="https://schema.org/RealEstateAgent" content="We Sell Any Home" />
           <div class="flex text-gold-400 text-lg">★★★★★</div>
-          <p class="text-gray-700 text-sm leading-relaxed flex-1">"Mario made the process seamless from start to close. Excellent experience for our family buying our first home in the Pittsburgh metro area."</p>
+          <p class="text-gray-700 text-sm leading-relaxed flex-1" itemprop="reviewBody">"Mario made the process seamless from start to close. Excellent experience for our family buying our first home in the Pittsburgh metro area."</p>
           <footer class="flex items-center gap-3 pt-2 border-t border-gray-200">
             <div class="w-9 h-9 rounded-full bg-navy-900 flex items-center justify-center text-white text-sm font-bold">M</div>
             <div>
-              <p class="font-semibold text-sm text-navy-900">Mark Putirer</p>
-              <p class="text-xs text-gray-400">Jan 11, 2022 · Zillow</p>
+              <p class="font-semibold text-sm text-navy-900" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Mark Putirer</span></p>
+              <p class="text-xs text-gray-400"><time itemprop="datePublished" datetime="2022-01-11">Jan 11, 2022</time> · Zillow</p>
             </div>
           </footer>
+          <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+            <meta itemprop="ratingValue" content="5" />
+            <meta itemprop="bestRating" content="5" />
+          </div>
         </blockquote>
 
       </div>
