@@ -1278,8 +1278,8 @@
             ? '<span class="absolute top-3 left-3 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">For Sale</span>'
             : '<span class="absolute top-3 left-3 bg-navy-900 text-white text-xs font-bold px-3 py-1 rounded-full">Sold</span>';
 
-          const domLine = isActive && listing.days_on_market != null
-            ? `<p class="text-green-600 text-xs font-semibold mt-1">${listing.days_on_market} days on market</p>`
+          const domLine = isActive && listing.listed_date
+            ? `<p class="text-green-600 text-xs font-semibold mt-1">Listed ${new Date(listing.listed_date + 'T00:00:00').toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'})}</p>`
             : listing.sold_date
               ? `<p class="text-gray-400 text-xs mt-1">Sold ${new Date(listing.sold_date).toLocaleDateString('en-US', {month:'short', year:'numeric'})}</p>`
               : '';
