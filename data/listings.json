@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "last_updated": "2026-03-21",
+    "last_updated": "2026-04-09",
     "total_sales": 173,
     "sales_last_12_months": 21,
     "avg_sale_price": 243000,
@@ -25,6 +25,24 @@
       "days_on_market": 1,
       "description": "Charming 3-bed Cape Cod in a quiet neighborhood. Hardwood floors, stone fireplace, freshly painted. Updated windows, newer electric box, sewer and gas lines. Cedar-lined closets, rear deck, large corner lot.",
       "mls_id": "1744657"
+    },
+    {
+      "id": "active-2",
+      "status": "For Sale",
+      "status_color": "green",
+      "price": 269900,
+      "address": "116 Mary Ann Dr",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "county": "Allegheny",
+      "beds": 3,
+      "baths": 2,
+      "sqft": 912,
+      "photo": "https://photos.zillowstatic.com/fp/11303062-cc_ft_960.jpg",
+      "zillow_url": "https://www.zillow.com/homedetails/116-Mary-Ann-Dr-Pittsburgh-PA-15227/11303062_zpid/",
+      "days_on_market": 1,
+      "description": "Beautifully updated ranch with bright, open layout. Recessed lighting, new plank flooring, Andersen casement windows, white shaker cabinets, quartz countertops, stainless-steel appliances. Finished basement with custom bar. New roof, gutters, HVAC, hot water tank, updated electrical, new concrete patio and pergola.",
+      "mls_id": "1747552"
     }
   ],
   "sold_listings": [
