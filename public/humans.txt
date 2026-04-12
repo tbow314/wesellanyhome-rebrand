@@ -1,0 +1,11 @@
+/* TEAM */
+Owner: Mario A. Rudolph
+Owner: Julie DiLucia
+Brokerage: Howard Hanna Real Estate Services
+Location: Pittsburgh, PA
+Phone: 412-400-2243
+Site: https://www.wesellanyhome.com
+
+/* SITE */
+Built with: HTML, Tailwind CSS, Vercel
+Last updated: 2026-04-11
