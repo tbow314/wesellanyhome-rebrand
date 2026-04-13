@@ -1,4 +1,4 @@
-# robots.txt - We Sell Any Home | Pittsburgh Real Estate
+# robots.txt - WeSellAnyHome | Mario Rudolph Team at Howard Hanna
 # AI + Search Engine Crawler Instructions
 
 # Allow all crawlers
@@ -30,12 +30,6 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-User-agent: Bytespider
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
 User-agent: Googlebot
 Allow: /
 
@@ -60,7 +54,13 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
-Sitemap: https://www.wesellanyhome.com/sitemap.xml
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://wesellanyhome.com/sitemap.xml
 
 # AI-Readable Site Summary
-# See https://www.wesellanyhome.com/llms.txt for LLM-friendly content
+# See https://wesellanyhome.com/llms.txt for LLM-friendly content

@@ -2,6 +2,9 @@
   "name": "wesellanyhome",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "geo-refresh": "npx ts-node scripts/geo-content-refresh.ts"
+  },
   "dependencies": {
     "nodemailer": "^6.9.9"
   }

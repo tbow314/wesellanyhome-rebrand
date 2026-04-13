@@ -14,9 +14,16 @@
     { "source": "/robots.txt", "destination": "/public/robots.txt" },
     { "source": "/sitemap.xml", "destination": "/public/sitemap.xml" },
     { "source": "/llms.txt", "destination": "/public/llms.txt" },
+    { "source": "/a1b2c3d4e5f6g7h8.txt", "destination": "/public/a1b2c3d4e5f6g7h8.txt" },
     { "source": "/favicon.ico", "destination": "/public/favicon.ico" },
+    { "source": "/faq", "destination": "/faq.html" },
+    { "source": "/allegheny-county", "destination": "/neighborhoods/allegheny-county.html" },
+    { "source": "/washington-county", "destination": "/neighborhoods/washington-county.html" },
+    { "source": "/westmoreland-county", "destination": "/neighborhoods/westmoreland-county.html" },
+    { "source": "/butler-county", "destination": "/neighborhoods/butler-county.html" },
+    { "source": "/pittsburgh-real-estate-faq", "destination": "/public/pittsburgh-real-estate-faq.html" },
     {
-      "source": "/((?!api/|local-intel/|neighborhoods/|public/).*)",
+      "source": "/((?!api/|local-intel/|neighborhoods/|public/|faq\\.html).*)",
       "destination": "/index.html"
     }
   ]
