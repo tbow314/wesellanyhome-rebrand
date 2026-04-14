@@ -1,7 +1,7 @@
 {
   "_meta": {
     "last_updated": "2026-04-09",
-    "total_sales": 173,
+    "total_sales": 174,
     "sales_last_12_months": 21,
     "avg_sale_price": 243000,
     "zillow_rating": "5.0",
@@ -50,6 +50,23 @@
       "id": "sold-1",
       "status": "Sold",
       "status_color": "navy",
+      "price": 235000,
+      "sold_date": "2026-04-13",
+      "address": "1457 Prospect Rd",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "county": "Allegheny",
+      "beds": 3,
+      "baths": 2,
+      "sqft": 1012,
+      "represented": "Buyer",
+      "photo": "https://photos.zillowstatic.com/fp/3ad477e6c9f9a2d9117bf15dca81e811-cc_ft_960.webp",
+      "zillow_url": "https://www.zillow.com/profile/marioarudolph"
+    },
+    {
+      "id": "sold-2",
+      "status": "Sold",
+      "status_color": "navy",
       "price": 145000,
       "sold_date": "2026-03-20",
       "address": "9 Short St",
@@ -64,7 +81,7 @@
       "zillow_url": "https://www.zillow.com/profile/marioarudolph"
     },
     {
-      "id": "sold-2",
+      "id": "sold-3",
       "status": "Sold",
       "status_color": "navy",
       "price": 189900,
@@ -81,7 +98,7 @@
       "zillow_url": "https://www.zillow.com/profile/marioarudolph"
     },
     {
-      "id": "sold-3",
+      "id": "sold-4",
       "status": "Sold",
       "status_color": "navy",
       "price": 525000,
@@ -98,7 +115,7 @@
       "zillow_url": "https://www.zillow.com/profile/marioarudolph"
     },
     {
-      "id": "sold-4",
+      "id": "sold-5",
       "status": "Sold",
       "status_color": "navy",
       "price": 120000,
@@ -115,7 +132,7 @@
       "zillow_url": "https://www.zillow.com/profile/marioarudolph"
     },
     {
-      "id": "sold-5",
+      "id": "sold-6",
       "status": "Sold",
       "status_color": "navy",
       "price": 295000,
