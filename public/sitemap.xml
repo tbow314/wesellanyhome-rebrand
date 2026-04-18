@@ -3,9 +3,17 @@
 
   <url>
     <loc>https://wesellanyhome.com/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- AI Answers page (FAQPage + Article schema, 25 canonical answers) -->
+  <url>
+    <loc>https://wesellanyhome.com/answers.html</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
   </url>
 
   <!-- County Landing Pages -->
@@ -228,7 +236,7 @@
   <!-- LLMs.txt -->
   <url>
     <loc>https://wesellanyhome.com/llms.txt</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>

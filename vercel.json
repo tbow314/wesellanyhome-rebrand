@@ -22,8 +22,9 @@
     { "source": "/westmoreland-county", "destination": "/neighborhoods/westmoreland-county.html" },
     { "source": "/butler-county", "destination": "/neighborhoods/butler-county.html" },
     { "source": "/pittsburgh-real-estate-faq", "destination": "/public/pittsburgh-real-estate-faq.html" },
+    { "source": "/answers", "destination": "/answers.html" },
     {
-      "source": "/((?!api/|local-intel/|neighborhoods/|public/|faq\\.html).*)",
+      "source": "/((?!api/|local-intel/|neighborhoods/|public/|faq\\.html|answers\\.html).*)",
       "destination": "/index.html"
     }
   ]
