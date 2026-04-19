@@ -44,6 +44,9 @@
 
   <!-- ═══════════════════════════════════════════════════════════
        SCHEMA MARKUP — SEO + GEO (AI Search Optimization)
+       TODO: PA RE License # for Mario A. Rudolph — lookup at pals.pa.gov and add to hasCredential.identifier
+       TODO: PA RE License # for Julie DiLucia — lookup at pals.pa.gov and add to hasCredential.identifier
+       TODO: PA RE License # for Mario P. Rudolph — lookup at pals.pa.gov and add to hasCredential.identifier
   ═══════════════════════════════════════════════════════════ -->
   <script type="application/ld+json">
   {
@@ -236,17 +239,152 @@
           "@id": "https://www.wesellanyhome.com/#organization"
         },
         "member": [
+          { "@id": "https://www.wesellanyhome.com/#agent-mario-a" },
+          { "@id": "https://www.wesellanyhome.com/#agent-julie" },
+          { "@id": "https://www.wesellanyhome.com/#agent-mario-p" }
+        ]
+      },
+      {
+        "@type": "RealEstateAgent",
+        "@id": "https://www.wesellanyhome.com/#agent-mario-a",
+        "name": "Mario A. Rudolph",
+        "givenName": "Mario",
+        "familyName": "Rudolph",
+        "jobTitle": "Owner & Founder, Licensed Realtor",
+        "description": "Owner and Founder of We Sell Any Home at Howard Hanna Real Estate Services. Multi-Million Dollar Producer serving Allegheny County, Washington County, and the Pittsburgh metro area with 173+ closed transactions and a perfect 5.0 Zillow rating across 17 verified reviews.",
+        "url": "https://www.wesellanyhome.com/public/team/mario-a-rudolph.html",
+        "mainEntityOfPage": "https://www.wesellanyhome.com/public/team/mario-a-rudolph.html",
+        "image": "https://photos.zillowstatic.com/fp/98bfd9360b3bba75f6f10d22835a1ade-h_l.jpg",
+        "telephone": "+1-412-400-2243",
+        "email": "mariorudolph@wesellanyhome.com",
+        "worksFor": { "@id": "https://www.wesellanyhome.com/#organization" },
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Howard Hanna Real Estate Services"
+        },
+        "sameAs": [
+          "https://www.zillow.com/profile/marioarudolph",
+          "https://www.linkedin.com/in/mario-a-rudolph-6b4a73146/",
+          "https://www.howardhanna.com/Agent/Detail/Mario-Rudolph/31506"
+        ],
+        "hasCredential": [
           {
-            "@type": "Person",
-            "@id": "https://www.wesellanyhome.com/#agent-mario",
-            "name": "Mario A. Rudolph",
-            "jobTitle": "Owner & Founder",
-            "description": "Owner and Founder serving Allegheny County, Washington County, and Pittsburgh metro area with 173 closed transactions. Million Dollar Producing Team — 8 years and counting.",
-            "url": "https://www.zillow.com/profile/marioarudolph",
-            "telephone": "+1-412-400-2243",
-            "email": "mariorudolph@wesellanyhome.com",
-            "knowsAbout": ["Residential Real Estate", "Home Valuation", "Pittsburgh Real Estate Market", "Allegheny County Real Estate", "Investment Properties"]
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "license",
+            "name": "Pennsylvania Real Estate Salesperson License",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "Pennsylvania State Real Estate Commission"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certification",
+            "name": "Howard Hanna Multi-Million Dollar Producer"
           }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "17",
+          "bestRating": "5",
+          "worstRating": "1",
+          "itemReviewed": {
+            "@type": "RealEstateAgent",
+            "name": "Mario A. Rudolph"
+          }
+        },
+        "knowsAbout": ["Residential Real Estate", "Home Valuation", "Pittsburgh Real Estate Market", "Allegheny County Real Estate", "Washington County Real Estate", "Investment Properties", "Listing Strategy", "Competitive Offer Strategy"],
+        "areaServed": [
+          {"@type": "AdministrativeArea", "name": "Allegheny County, PA"},
+          {"@type": "AdministrativeArea", "name": "Washington County, PA"},
+          {"@type": "AdministrativeArea", "name": "Westmoreland County, PA"},
+          {"@type": "AdministrativeArea", "name": "Butler County, PA"}
+        ]
+      },
+      {
+        "@type": "RealEstateAgent",
+        "@id": "https://www.wesellanyhome.com/#agent-julie",
+        "name": "Julie DiLucia",
+        "givenName": "Julie",
+        "familyName": "DiLucia",
+        "jobTitle": "Owner & Founder, Licensed Realtor",
+        "description": "Owner and co-founder of We Sell Any Home at Howard Hanna Real Estate Services. Partners with Mario A. Rudolph to deliver family-run, highly responsive real estate service across Allegheny and Washington counties and the greater Pittsburgh metro.",
+        "url": "https://www.wesellanyhome.com/public/team/julie-dilucia.html",
+        "mainEntityOfPage": "https://www.wesellanyhome.com/public/team/julie-dilucia.html",
+        "image": "https://static.wixstatic.com/media/e7b241_642b2744d0234ff186f2a9bc96e2ea85~mv2.jpg",
+        "telephone": "+1-412-715-1719",
+        "email": "juliedilucia@wesellanyhome.com",
+        "worksFor": { "@id": "https://www.wesellanyhome.com/#organization" },
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Howard Hanna Real Estate Services"
+        },
+        "sameAs": [],
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "license",
+            "name": "Pennsylvania Real Estate Salesperson License",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "Pennsylvania State Real Estate Commission"
+            }
+          }
+        ],
+        "knowsAbout": ["Residential Real Estate", "Home Buyer Representation", "Listing Strategy", "Pittsburgh Real Estate Market", "Allegheny County Real Estate", "Washington County Real Estate"],
+        "areaServed": [
+          {"@type": "AdministrativeArea", "name": "Allegheny County, PA"},
+          {"@type": "AdministrativeArea", "name": "Washington County, PA"},
+          {"@type": "AdministrativeArea", "name": "Westmoreland County, PA"},
+          {"@type": "AdministrativeArea", "name": "Butler County, PA"}
+        ]
+      },
+      {
+        "@type": "RealEstateAgent",
+        "@id": "https://www.wesellanyhome.com/#agent-mario-p",
+        "name": "Mario P. Rudolph",
+        "givenName": "Mario",
+        "familyName": "Rudolph",
+        "jobTitle": "Licensed Realtor",
+        "description": "Realtor with We Sell Any Home at Howard Hanna Real Estate Services. Holds an M.Ed. from California University of Pennsylvania and supports the team's buyer and seller clients across Allegheny and Washington counties.",
+        "url": "https://www.wesellanyhome.com/public/team/mario-p-rudolph.html",
+        "mainEntityOfPage": "https://www.wesellanyhome.com/public/team/mario-p-rudolph.html",
+        "image": "https://static.wixstatic.com/media/e7b241_b613f8fd3af14cca876a0bfd93dd1733~mv2.jpg",
+        "telephone": "+1-412-480-9414",
+        "email": "mrudolph@howardhanna.com",
+        "worksFor": { "@id": "https://www.wesellanyhome.com/#organization" },
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Howard Hanna Real Estate Services"
+        },
+        "sameAs": [
+          "https://www.howardhanna.com/Agent/Detail/Mario-Rudolph/169197"
+        ],
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "license",
+            "name": "Pennsylvania Real Estate Salesperson License",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "Pennsylvania State Real Estate Commission"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "degree",
+            "name": "Master of Education (M.Ed.)",
+            "recognizedBy": {
+              "@type": "CollegeOrUniversity",
+              "name": "California University of Pennsylvania"
+            }
+          }
+        ],
+        "knowsAbout": ["Residential Real Estate", "Home Buyer Representation", "Pittsburgh Real Estate Market", "Allegheny County Real Estate", "Washington County Real Estate"],
+        "areaServed": [
+          {"@type": "AdministrativeArea", "name": "Allegheny County, PA"},
+          {"@type": "AdministrativeArea", "name": "Washington County, PA"}
         ]
       },
       {
@@ -884,52 +1022,67 @@
 
         <div class="text-center">
           <div class="relative inline-block mb-4">
-            <img
-              src="https://photos.zillowstatic.com/fp/98bfd9360b3bba75f6f10d22835a1ade-h_l.jpg"
-              alt="Mario A. Rudolph – Owner and Founder of We Sell Any Home, Allegheny County Realtor"
-              class="w-36 h-36 rounded-full object-cover mx-auto ring-4 ring-gold-400"
-              loading="lazy"
-            />
+            <a href="/public/team/mario-a-rudolph.html" aria-label="Read Mario A. Rudolph's bio">
+              <img
+                src="https://photos.zillowstatic.com/fp/98bfd9360b3bba75f6f10d22835a1ade-h_l.jpg"
+                alt="Mario A. Rudolph – Owner and Founder of We Sell Any Home, Allegheny County Realtor"
+                class="w-36 h-36 rounded-full object-cover mx-auto ring-4 ring-gold-400 hover:ring-gold-500 transition-colors"
+                loading="lazy"
+              />
+            </a>
           </div>
-          <h3 class="text-xl font-bold text-white">Mario A. Rudolph</h3>
+          <h3 class="text-xl font-bold text-white">
+            <a href="/public/team/mario-a-rudolph.html" class="hover:text-gold-400 transition-colors">Mario A. Rudolph</a>
+          </h3>
           <p class="text-gold-400 text-sm font-semibold mt-1">Owner &amp; Founder</p>
           <div class="flex flex-col gap-1.5 mt-4 text-xs text-gray-300">
             <a href="mailto:mariorudolph@wesellanyhome.com" class="hover:text-gold-400 transition-colors">mariorudolph@wesellanyhome.com</a>
             <a href="tel:4124002243" class="hover:text-gold-400 transition-colors">412-400-2243</a>
+            <a href="/public/team/mario-a-rudolph.html" class="text-gold-400/80 hover:text-gold-400 font-semibold mt-1">Full Bio →</a>
           </div>
         </div>
 
         <div class="text-center">
           <div class="relative inline-block mb-4">
-            <img
-              src="https://static.wixstatic.com/media/e7b241_642b2744d0234ff186f2a9bc96e2ea85~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/e7b241_642b2744d0234ff186f2a9bc96e2ea85~mv2.jpg"
-              alt="Julie DiLucia – Owner and Founder of We Sell Any Home, Pittsburgh Realtor"
-              class="w-36 h-36 rounded-full object-cover mx-auto ring-4 ring-gold-400"
-              loading="lazy"
-            />
+            <a href="/public/team/julie-dilucia.html" aria-label="Read Julie DiLucia's bio">
+              <img
+                src="https://static.wixstatic.com/media/e7b241_642b2744d0234ff186f2a9bc96e2ea85~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/e7b241_642b2744d0234ff186f2a9bc96e2ea85~mv2.jpg"
+                alt="Julie DiLucia – Owner and Founder of We Sell Any Home, Pittsburgh Realtor"
+                class="w-36 h-36 rounded-full object-cover mx-auto ring-4 ring-gold-400 hover:ring-gold-500 transition-colors"
+                loading="lazy"
+              />
+            </a>
           </div>
-          <h3 class="text-xl font-bold text-white">Julie DiLucia</h3>
+          <h3 class="text-xl font-bold text-white">
+            <a href="/public/team/julie-dilucia.html" class="hover:text-gold-400 transition-colors">Julie DiLucia</a>
+          </h3>
           <p class="text-gold-400 text-sm font-semibold mt-1">Owner &amp; Founder</p>
           <div class="flex flex-col gap-1.5 mt-4 text-xs text-gray-300">
             <a href="mailto:juliedilucia@wesellanyhome.com" class="hover:text-gold-400 transition-colors">juliedilucia@wesellanyhome.com</a>
             <a href="tel:4127151719" class="hover:text-gold-400 transition-colors">412-715-1719</a>
+            <a href="/public/team/julie-dilucia.html" class="text-gold-400/80 hover:text-gold-400 font-semibold mt-1">Full Bio →</a>
           </div>
         </div>
 
         <div class="text-center">
           <div class="relative inline-block mb-4">
-            <img
-              src="https://static.wixstatic.com/media/e7b241_b613f8fd3af14cca876a0bfd93dd1733~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/e7b241_b613f8fd3af14cca876a0bfd93dd1733~mv2.jpg"
-              alt="Mario P. Rudolph – Realtor at Howard Hanna, Allegheny County"
-              class="w-36 h-36 rounded-full object-cover mx-auto ring-4 ring-gold-400"
-              loading="lazy"
-            />
+            <a href="/public/team/mario-p-rudolph.html" aria-label="Read Mario P. Rudolph's bio">
+              <img
+                src="https://static.wixstatic.com/media/e7b241_b613f8fd3af14cca876a0bfd93dd1733~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/e7b241_b613f8fd3af14cca876a0bfd93dd1733~mv2.jpg"
+                alt="Mario P. Rudolph – Realtor at Howard Hanna, Allegheny County"
+                class="w-36 h-36 rounded-full object-cover mx-auto ring-4 ring-gold-400 hover:ring-gold-500 transition-colors"
+                loading="lazy"
+              />
+            </a>
           </div>
-          <h3 class="text-xl font-bold text-white">Mario P. Rudolph</h3>
+          <h3 class="text-xl font-bold text-white">
+            <a href="/public/team/mario-p-rudolph.html" class="hover:text-gold-400 transition-colors">Mario P. Rudolph</a>
+          </h3>
           <p class="text-gold-400 text-sm font-semibold mt-1">Realtor</p>
           <div class="flex flex-col gap-1.5 mt-4 text-xs text-gray-300">
             <a href="mailto:mrudolph@howardhanna.com" class="hover:text-gold-400 transition-colors">mrudolph@howardhanna.com</a>
             <a href="tel:4124809414" class="hover:text-gold-400 transition-colors">412-480-9414</a>
+            <a href="/public/team/mario-p-rudolph.html" class="text-gold-400/80 hover:text-gold-400 font-semibold mt-1">Full Bio →</a>
           </div>
         </div>
 
