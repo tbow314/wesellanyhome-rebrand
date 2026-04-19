@@ -3,7 +3,7 @@
 
   <url>
     <loc>https://wesellanyhome.com/</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,7 +11,7 @@
   <!-- AI Answers page (FAQPage + Article schema, 25 canonical answers) -->
   <url>
     <loc>https://wesellanyhome.com/answers.html</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -214,7 +214,7 @@
   </url>
   <url>
     <loc>https://wesellanyhome.com/pittsburgh-real-estate-statistics-2026.html</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -222,7 +222,7 @@
   <!-- Existing FAQ & Guide Pages -->
   <url>
     <loc>https://wesellanyhome.com/pittsburgh-real-estate-faq.html</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -236,7 +236,7 @@
   <!-- LLMs.txt -->
   <url>
     <loc>https://wesellanyhome.com/llms.txt</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
