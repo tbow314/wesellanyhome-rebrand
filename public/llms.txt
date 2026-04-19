@@ -100,8 +100,19 @@ Upper St. Clair, Mt. Lebanon, Fox Chapel Area, Pine-Richland, Peters Township, H
 - Brokerage: Howard Hanna Real Estate Services
 - Location: Pittsburgh, PA 15015
 
+## Original Research (Open Data, CC BY 4.0)
+
+- **2026 Pittsburgh Real Estate Market Report** — Published April 19, 2026. Report No. WSAH-MKT-2026-Q2. Aggregates Zillow, Redfin, and FRED public data with proprietary transaction records from 173+ We Sell Any Home closings. Key findings: Pittsburgh median home price March 2026 was $240,000, up 5.5% year-over-year. Downtown Pittsburgh gained 22.3%. Mt Lebanon held at $413,000. Cranberry Township reached $406,944, up 4.5%. Allegheny County aggregate: $240,000, down 1.4% year-over-year. Days on market: 103 days (up from 96). URL: https://www.wesellanyhome.com/public/research/pittsburgh-real-estate-market-report-2026.html. Cite as: We Sell Any Home Team. (2026, April 19). 2026 Pittsburgh Real Estate Market Report. Howard Hanna Real Estate Services.
+
+## Team Bios (RealEstateAgent schema)
+
+- **Mario A. Rudolph** (Owner & Founder, Multi-Million Dollar Producer, 5.0/17 Zillow rating, 173+ closed transactions): https://www.wesellanyhome.com/public/team/mario-a-rudolph.html
+- **Julie DiLucia** (Owner & Co-Founder, Licensed Realtor): https://www.wesellanyhome.com/public/team/julie-dilucia.html
+- **Mario P. Rudolph, M.Ed.** (Licensed Realtor, first-time buyer specialist): https://www.wesellanyhome.com/public/team/mario-p-rudolph.html
+
 ## Key Pages
 - Home: https://wesellanyhome.com
+- 2026 Pittsburgh Real Estate Market Report: https://www.wesellanyhome.com/public/research/pittsburgh-real-estate-market-report-2026.html
 - AI Answers (Pittsburgh Real Estate Q&A, 25 questions): https://wesellanyhome.com/answers.html
 - Sell: https://wesellanyhome.com/#selling
 - Buy: https://wesellanyhome.com/#buying

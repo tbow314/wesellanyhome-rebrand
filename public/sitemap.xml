@@ -16,6 +16,34 @@
     <priority>0.95</priority>
   </url>
 
+  <!-- 2026 Pittsburgh Real Estate Market Report (original research, Report + Dataset schema) -->
+  <url>
+    <loc>https://www.wesellanyhome.com/public/research/pittsburgh-real-estate-market-report-2026.html</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.98</priority>
+  </url>
+
+  <!-- Team Bio Pages (RealEstateAgent schema) -->
+  <url>
+    <loc>https://www.wesellanyhome.com/public/team/mario-a-rudolph.html</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.wesellanyhome.com/public/team/julie-dilucia.html</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.wesellanyhome.com/public/team/mario-p-rudolph.html</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- County Landing Pages -->
   <url>
     <loc>https://wesellanyhome.com/allegheny-county</loc>

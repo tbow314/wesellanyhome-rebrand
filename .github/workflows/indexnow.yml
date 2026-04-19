@@ -1,0 +1,43 @@
+name: IndexNow ping (Bing + ChatGPT pipeline)
+
+# Fires on every push to main. Notifies Bing (and through Bing, ChatGPT web search)
+# that our content is fresh — average indexing latency drops from 30 days to minutes.
+# See scripts/indexnow-ping.py for per-host config.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.html'
+      - 'public/sitemap.xml'
+      - 'public/robots.txt'
+      - 'public/llms.txt'
+  workflow_dispatch:
+    inputs:
+      since:
+        description: 'Only ping URLs with lastmod >= this date (YYYY-MM-DD). Leave blank for all.'
+        required: false
+        default: ''
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Wait for Vercel deploy to settle
+        run: sleep 60
+
+      - name: Ping IndexNow
+        run: |
+          if [ -n "${{ github.event.inputs.since }}" ]; then
+            python scripts/indexnow-ping.py --since "${{ github.event.inputs.since }}"
+          else
+            python scripts/indexnow-ping.py
+          fi
