@@ -32,11 +32,13 @@ INDEXNOW_CONFIG = {
     },
     "wesellanyhome.com": {
         "key": "a1b2c3d4e5f6g7h8",
-        "keyLocation": "https://wesellanyhome.com/a1b2c3d4e5f6g7h8.txt",
+        "keyLocation": "https://www.wesellanyhome.com/a1b2c3d4e5f6g7h8.txt",
+        "canonical_host": "www.wesellanyhome.com",
     },
     "www.wesellanyhome.com": {
         "key": "a1b2c3d4e5f6g7h8",
-        "keyLocation": "https://wesellanyhome.com/a1b2c3d4e5f6g7h8.txt",
+        "keyLocation": "https://www.wesellanyhome.com/a1b2c3d4e5f6g7h8.txt",
+        "canonical_host": "www.wesellanyhome.com",
     },
 }
 
@@ -127,10 +129,15 @@ def main():
         sys.exit(1)
 
     cfg = INDEXNOW_CONFIG[host]
+    # Rewrite URLs to canonical host if specified (Bing requires host == URL host)
+    canonical = cfg.get("canonical_host", host)
+    if canonical != host:
+        urls = [u.replace(f"://{host}", f"://{canonical}", 1) for u in urls]
+
     # Bing rejects payloads >10k URLs; chunk to be safe.
     for i in range(0, len(urls), 5000):
         chunk = urls[i : i + 5000]
-        ping(host, cfg["key"], cfg["keyLocation"], chunk, dry_run=args.dry_run)
+        ping(canonical, cfg["key"], cfg["keyLocation"], chunk, dry_run=args.dry_run)
 
 
 if __name__ == "__main__":
