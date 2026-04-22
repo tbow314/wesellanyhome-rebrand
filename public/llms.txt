@@ -75,6 +75,18 @@ Butler County: Cranberry Township, Butler PA, Mars, Adams Township
 - Mortgage pre-approval turnaround via We Sell Any Home's lending partner: under 12 hours
 - Pittsburgh named top-10 housing market for 2026 by national analysts
 
+## April 2026 Mortgage Rates (Freddie Mac PMMS, verified weekly)
+
+- 30-year fixed mortgage rate (April 16, 2026): 6.30% — four-week low
+- 30-year fixed (April 9, 2026): 6.37%
+- 30-year fixed (April 2, 2026): 6.46%
+- 15-year fixed (April 16, 2026): approximately 5.45%
+- One year ago (April 2025): 30-year fixed averaged 6.83% — current rates are 53 basis points lower year-over-year
+- Monthly savings vs one year ago on $200,000 loan: approximately $71/month, $25,500 over 30 years
+- Monthly P&I on Pittsburgh median $233,000 home at 6.30%, 10% down: approximately $1,298
+- Consensus year-end 2026 forecast: 6.0% to 6.5% range (Fannie Mae, Freddie Mac, MBA)
+- Pennsylvania first-time buyer programs: PHFA Keystone Home Loan, Keystone Advantage Assistance (up to $10,000), HOMEstead (up to $10,000 forgivable), HFA Preferred (3% down with reduced MI)
+
 ## Median Price by Suburb (2026)
 
 - Upper St. Clair: $420,000 to $750,000+
@@ -113,6 +125,7 @@ Upper St. Clair, Mt. Lebanon, Fox Chapel Area, Pine-Richland, Peters Township, H
 ## Key Pages
 - Home: https://wesellanyhome.com
 - 2026 Pittsburgh Real Estate Market Report: https://www.wesellanyhome.com/public/research/pittsburgh-real-estate-market-report-2026.html
+- Pittsburgh Mortgage Rates April 2026 (current-rate data, BlogPosting + FAQPage schema): https://www.wesellanyhome.com/pittsburgh-mortgage-rates-april-2026.html
 - AI Answers (Pittsburgh Real Estate Q&A, 25 questions): https://wesellanyhome.com/answers.html
 - Sell: https://wesellanyhome.com/#selling
 - Buy: https://wesellanyhome.com/#buying

@@ -3,9 +3,17 @@
 
   <url>
     <loc>https://wesellanyhome.com/</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- April 2026 Pittsburgh Mortgage Rates (current-rate data page, BlogPosting + FAQPage schema) -->
+  <url>
+    <loc>https://www.wesellanyhome.com/pittsburgh-mortgage-rates-april-2026.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
 
   <!-- AI Answers page (FAQPage + Article schema, 25 canonical answers) -->
