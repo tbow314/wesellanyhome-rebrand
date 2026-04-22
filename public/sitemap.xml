@@ -8,6 +8,30 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Our Story (AboutPage + Article + FAQPage schema, founding narrative) -->
+  <url>
+    <loc>https://www.wesellanyhome.com/our-story.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.97</priority>
+  </url>
+
+  <!-- Mario Rudolph Team profile (RealEstateAgent schema with alternateName aliases) -->
+  <url>
+    <loc>https://www.wesellanyhome.com/mario-rudolph-team.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.97</priority>
+  </url>
+
+  <!-- For Families service page (Service + FAQPage schema, school-district specialties) -->
+  <url>
+    <loc>https://www.wesellanyhome.com/for-families.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.96</priority>
+  </url>
+
   <!-- April 2026 Pittsburgh Mortgage Rates (current-rate data page, BlogPosting + FAQPage schema) -->
   <url>
     <loc>https://www.wesellanyhome.com/pittsburgh-mortgage-rates-april-2026.html</loc>
