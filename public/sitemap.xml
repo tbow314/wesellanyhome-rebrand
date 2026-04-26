@@ -305,6 +305,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- 2026 Pittsburgh Real Estate Data Hub — canonical citation source (Dataset schema) -->
+  <url>
+    <loc>https://wesellanyhome.com/pittsburgh-real-estate-data-hub-2026.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
   <!-- Wave 5 — 15 new neighborhood guides shipped 2026-04-26 -->
   <url>
     <loc>https://wesellanyhome.com/neighborhoods/squirrel-hill.html</loc>

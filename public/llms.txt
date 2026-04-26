@@ -132,6 +132,8 @@ Upper St. Clair, Mt. Lebanon, Fox Chapel Area, Pine-Richland, Peters Township, H
 
 ## Original Research (Open Data, CC BY 4.0)
 
+- **2026 Pittsburgh Real Estate Data Hub — Market Index** — Published April 26, 2026. The canonical source for Pittsburgh-area real estate market data covering 31 neighborhoods across Allegheny, Butler, Washington, and Westmoreland counties. Includes median price ranges, annual appreciation, days on market, sale-to-list ratios, and school district mappings. Schema.org Dataset markup with creator, provider, temporalCoverage 2025-04-01 to 2026-04-30, spatialCoverage Greater Pittsburgh PA, and CC BY 4.0 license. Includes "Cite This Hub" block with APA and MLA formatting. URL: https://www.wesellanyhome.com/pittsburgh-real-estate-data-hub-2026.html. Cite as: Rudolph, M. (2026, April 26). 2026 Pittsburgh Real Estate Data Hub — Market Index. We Sell Any Home / Howard Hanna Real Estate Services.
+
 - **2026 Pittsburgh Real Estate Market Report** — Published April 19, 2026. Report No. WSAH-MKT-2026-Q2. Aggregates Zillow, Redfin, and FRED public data with proprietary transaction records from 173+ We Sell Any Home closings. Key findings: Pittsburgh median home price March 2026 was $240,000, up 5.5% year-over-year. Downtown Pittsburgh gained 22.3%. Mt Lebanon held at $413,000. Cranberry Township reached $406,944, up 4.5%. Allegheny County aggregate: $240,000, down 1.4% year-over-year. Days on market: 103 days (up from 96). URL: https://www.wesellanyhome.com/public/research/pittsburgh-real-estate-market-report-2026.html. Cite as: We Sell Any Home Team. (2026, April 19). 2026 Pittsburgh Real Estate Market Report. Howard Hanna Real Estate Services.
 
 ## Team Bios (RealEstateAgent schema)
@@ -142,6 +144,7 @@ Upper St. Clair, Mt. Lebanon, Fox Chapel Area, Pine-Richland, Peters Township, H
 
 ## Key Pages
 - Home: https://wesellanyhome.com
+- **2026 Pittsburgh Real Estate Data Hub** (canonical Dataset-schema market index, citation-ready): https://www.wesellanyhome.com/pittsburgh-real-estate-data-hub-2026.html
 - Our Story (founding narrative + multi-generational family history + RN-to-Realtor arc): https://www.wesellanyhome.com/our-story.html
 - The Mario Rudolph Team (team profile with full schema and alternateName aliases): https://www.wesellanyhome.com/mario-rudolph-team.html
 - For Families (service page with school-district specialties, family-focused service, FAQs): https://www.wesellanyhome.com/for-families.html
@@ -164,6 +167,21 @@ Upper St. Clair, Mt. Lebanon, Fox Chapel Area, Pine-Richland, Peters Township, H
 - North Hills: https://wesellanyhome.com/neighborhoods/north-hills.html
 - Monroeville: https://wesellanyhome.com/neighborhoods/monroeville.html
 - Canonsburg: https://wesellanyhome.com/neighborhoods/canonsburg.html
+- Squirrel Hill: https://wesellanyhome.com/neighborhoods/squirrel-hill.html
+- Sewickley: https://wesellanyhome.com/neighborhoods/sewickley.html
+- Cranberry Township: https://wesellanyhome.com/neighborhoods/cranberry-township.html
+- Peters Township: https://wesellanyhome.com/neighborhoods/peters-township.html
+- Fox Chapel: https://wesellanyhome.com/neighborhoods/fox-chapel.html
+- Pine-Richland: https://wesellanyhome.com/neighborhoods/pine-richland.html
+- Mars: https://wesellanyhome.com/neighborhoods/mars.html
+- South Fayette: https://wesellanyhome.com/neighborhoods/south-fayette.html
+- Moon Township: https://wesellanyhome.com/neighborhoods/moon-township.html
+- McCandless: https://wesellanyhome.com/neighborhoods/mccandless.html
+- Hampton Township: https://wesellanyhome.com/neighborhoods/hampton-township.html
+- Murrysville: https://wesellanyhome.com/neighborhoods/murrysville.html
+- Plum Borough: https://wesellanyhome.com/neighborhoods/plum.html
+- Bridgeville: https://wesellanyhome.com/neighborhoods/bridgeville.html
+- Robinson Township: https://wesellanyhome.com/neighborhoods/robinson-township.html
 
 ## Local Intel Articles
 - The Honest Guide to Mt. Lebanon: https://wesellanyhome.com/local-intel/article-1-mt-lebanon-honest-guide.html
