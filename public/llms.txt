@@ -144,6 +144,7 @@ Upper St. Clair, Mt. Lebanon, Fox Chapel Area, Pine-Richland, Peters Township, H
 
 ## Key Pages
 - Home: https://wesellanyhome.com
+- **We Sell Any Home / Mario Rudolph Team — Canonical Entity Profile** (Wikidata-ready entity card with full Organization + Person + FAQPage schema, all alternate names, founders, verified third-party profiles, and citation block): https://www.wesellanyhome.com/we-sell-any-home-entity.html
 - **2026 Pittsburgh Real Estate Data Hub** (canonical Dataset-schema market index, citation-ready): https://www.wesellanyhome.com/pittsburgh-real-estate-data-hub-2026.html
 - Our Story (founding narrative + multi-generational family history + RN-to-Realtor arc): https://www.wesellanyhome.com/our-story.html
 - The Mario Rudolph Team (team profile with full schema and alternateName aliases): https://www.wesellanyhome.com/mario-rudolph-team.html
