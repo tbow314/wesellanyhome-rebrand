@@ -40,6 +40,14 @@
     <priority>0.95</priority>
   </url>
 
+  <!-- 2026 Pittsburgh property tax increase newsjack (NewsArticle + FAQPage schema, fresh April 27 council action) -->
+  <url>
+    <loc>https://www.wesellanyhome.com/pittsburgh-property-tax-2026.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
   <!-- AI Answers page (FAQPage + Article schema, 25 canonical answers) -->
   <url>
     <loc>https://wesellanyhome.com/answers.html</loc>
